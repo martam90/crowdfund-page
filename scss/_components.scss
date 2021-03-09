@@ -1,0 +1,179 @@
+// input checkbox
+
+.container__checkbox {
+    display: block;
+    position: relative;
+}
+
+.container__checkbox input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid $greyish;
+    transform: translateY(-1rem);
+    background-color: #fff;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 0.37rem;
+        left: 0.37rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background: $moderate-cyan;
+    }
+
+    @include tablet {
+        top: 0.2rem;
+    }
+}
+
+.box__modal-border.active input ~ .checkmark::after {
+    display: block;
+}
+
+
+// buttons
+.cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    transition: $transition;
+
+
+    &.cta--cyan {
+        background-color: $moderate-cyan;
+        color: white;
+        font-weight: 700;
+
+        @include tablet {
+            justify-self: end;
+        }
+        
+
+        &:hover {
+            background-color: $dark-cyan;
+            transition: $transition;
+        }
+    }
+
+    &.cta--disabled {
+        background-color: $dark-gray;
+        color: white;
+        font-weight: 700;
+        cursor: no-drop;
+
+        @include tablet {
+            justify-self: end;
+        }
+    }
+
+    &.cta--bookmark {
+        background-color: $grey;
+        color: $dark-gray;
+        font-weight: 700;
+        border-radius: 0 9999px 9999px 0;
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+        }
+
+        &.active {
+            color: $dark-cyan;
+        }
+    }
+
+}
+
+
+// proggress bar
+
+
+.box__progress {
+    padding-top: 1rem;
+
+    @include tablet {
+        grid-column: 1 / 4;
+    }
+}
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1rem;
+    border: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: $grey;
+    border-radius: 1rem;
+}
+
+progress::-webkit-progress-value {
+    background-color: $moderate-cyan;
+    border-radius: 1rem;
+}
+
+progress::-moz-progress-bar {
+    background-color: $dark-cyan;
+    border-radius: 1rem;
+}
+
+
+// bookmark
+
+.bookmark__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding-top: 1rem;
+
+    @include tablet {
+        justify-content: space-between;
+    }
+}
+
+.bookmark {
+    display: flex;
+}
+
+.bookmark__img {
+    position: relative;
+    right: -2rem;
+    fill: #2F2F2F;
+
+    &.active {
+        fill: $dark-cyan;
+    }
+
+    .bookmark__path {
+        fill:#B1B1B1;
+
+        &.active {
+            fill: white;
+        }
+    }
+
+
+    @include mobile {
+        right: auto;
+        margin-top: 1rem;
+    }
+}
