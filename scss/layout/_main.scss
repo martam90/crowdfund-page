@@ -1,181 +1,181 @@
 main {
-    background-color: $light-grey;
-    padding-bottom: 2rem;
+  background-color: $light-grey;
+  padding-bottom: 2rem;
 }
 
 .box__overlay {
-    position: relative;
-    top: -3rem;
+  position: relative;
+  top: -3rem;
 
-    @include tablet {
-        position: relative;
-        top: -8rem;
-    }
+  @include tablet {
+    position: relative;
+    top: -5.5rem;
+  }
 }
 
 .box {
-    background-color: #fff;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  margin-bottom: 1.5rem;
 
-    @include tablet {
-        max-width: 50rem;
-        margin-right: auto;
-        margin-left: auto;
+  @include tablet {
+    max-width: 45rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2rem 3rem;
+  }
+
+  &.box--top {
+    text-align: center;
+    position: relative;
+  }
+
+  &.box--middle {
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
+  }
 
-    &.box--top {
-        text-align: center;
-        position: relative;
-    }
-
-    &.box--middle {
-        @include tablet {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    &.box--bottom {
-        margin-bottom: 0;
-    }
-
+  &.box--bottom {
+    margin-bottom: 0;
+  }
 }
 
-
 .box__brand-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.perex {
+  color: $dark-gray;
+  font-size: 0.8rem;
 }
 
 .text {
-    margin: 0;
-    line-height: 1.5;
+  margin: 0;
+  line-height: 1.5;
 
-    &.text--grey {
-        color: $dark-gray;
-
-        @include tablet {
-            grid-column: span 2;
-        }
-    }
-
-    &.text--grey-success {
-        color: $dark-gray;
-        padding-bottom: 1rem;
-    }
-
-    &.text--cyan {
-        color: $moderate-cyan;
-        padding: 0.5rem 0;
-
-        @include tablet {
-            padding: 0;
-            justify-self: end;
-        }
-    }
-
-    &.text--bold {
-        font-weight: 700;
-        padding: 1rem 0;
-        font-size: 1.5rem;
-
-        @include tablet {
-            padding: 0;
-        }
-    }
-
-    &.text--bold-right {
-        justify-self: end;
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-    }
-
-    &.text--middle {
-        color: $dark-gray;
-        font-weight: 400;
-        font-size: 0.9rem;
-        vertical-align: 0.2rem;
-    }
-}
-
-
-.box__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    position: relative;
+  &.text--grey {
+    color: $dark-gray;
+    font-size: 1rem;
 
     @include tablet {
-        align-items: flex-start;
+      grid-column: span 2;
     }
+  }
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -1rem;
+  &.text--grey-success {
+    color: $dark-gray;
+    padding-bottom: 1rem;
+  }
 
-        background-color: $greyish;
-        width: 5rem;
-        height: 1px;
+  &.text--cyan {
+    color: $moderate-cyan;
+    padding: 0.5rem 0;
 
-        @include tablet {
-            bottom: unset;
-            top: 3rem;
-            right: 0;
-            transform: rotate(90deg);
-        }
+    @include tablet {
+      padding: 0;
+      justify-self: end;
     }
+  }
 
-    &:nth-child(3)::after {
-        @include tablet {
-            display: none;
-        }
+  &.text--bold {
+    font-weight: 700;
+    padding: 1rem 0;
+    font-size: 2rem;
+
+    @include tablet {
+      padding: 0;
     }
+  }
 
+  &.text--bold-right {
+    justify-self: end;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  &.text--middle {
+    color: $dark-gray;
+    font-weight: 400;
+    font-size: 0.9rem;
+    vertical-align: 0.2rem;
+  }
+}
+
+.box__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+
+  @include desktop {
+    align-items: flex-start;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+
+    background-color: $greyish;
+    width: 5rem;
+    height: 1px;
+
+    @include desktop {
+      bottom: unset;
+      top: 3rem;
+      right: 0;
+      transform: rotate(90deg);
+    }
+  }
+
+  &:nth-child(3)::after {
+    @include tablet {
+      display: none;
+    }
+  }
 }
 
 // js classes
 .expired {
-    color: red;
-    font-weight: 700;
+  color: red;
+  font-weight: 700;
 }
 
 .time-left {
-    color: black;
-    font-weight: 700;
+  color: black;
+  font-weight: 700;
 }
-
 
 .box__border {
-    border: 1px solid $greyish;
-    border-radius: 1rem;
-    padding: 2rem;
+  border: 1px solid $greyish;
+  border-radius: 1rem;
+  padding: 2rem;
 
-    margin-top: 1.5rem;
+  margin-top: 2.8rem;
 
-    &.box__border--disabled {
-        opacity: 0.5;
-        cursor: no-drop;
-    }
+  &.box__border--disabled {
+    opacity: 0.5;
+    cursor: no-drop;
+  }
 
-    @include tablet {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
-        gap: 1.5rem 0;
-    }
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 2.2rem 0;
+  }
 }
 
-
-
 .attribution {
-    text-align: center;
-    font-size: 0.9rem;
-    background-color: $light-grey;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: $light-grey;
 }

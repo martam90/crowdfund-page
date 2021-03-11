@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="scss/index.css">
@@ -17,7 +17,7 @@
           <img src="images/logo.svg" class="masthead__brand-img" alt="logo">
         </a>
         <nav>
-          <button class="btn__menu" type="button" aria-label="toggle-menu" aria-expanded="false">
+          <button class="btn__menu" type="button" aria-label="open menu" aria-expanded="false">
             <img src="images/icon-hamburger.svg" class="mobile-menu-icon" alt="menu open icon">
           </button>
           <ul class="nav__list nav__list--hidden">
@@ -36,13 +36,13 @@
         <div class="box box--top">
             <img src="images/logo-mastercraft.svg" class="box__brand-img" alt="logo-mastercraft">
           <h1>Mastercraft Bamboo Monitor Riser</h1>
-          <p class="text text--grey">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+          <span class="perex">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</span>
 
           <div class="bookmark__content">
-            <button class="cta cta--cyan cta--select" id="btnSupport">Back this project</button>
+            <button class="cta cta--cyan cta--select" id="btnSupport" aria-label="select">Back this project</button>
             <div class="bookmark">
                 <svg class="bookmark__img" width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g><circle cx="28" cy="28" r="28"/><path class="bookmark__path" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
-              <button class="cta cta--bookmark" id="btnBookmark">Bookmark</button>
+              <button class="cta cta--bookmark" id="btnBookmark" aria-label="add to bookmark">Bookmark</button>
             </div>
           </div>
         </div>
@@ -64,56 +64,56 @@
           </div>
 
           <div class="box__progress">
-            <progress id="progress" value="60" max="100"></progress>
+            <progress id="progress" value="80" max="100"></progress>
           </div>
         </div>
 
         <div class="box box--bottom">
-          <h2>About this project</h2>
-          <p class="text text--grey">The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
-            to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
+          <h3>About this project</h3>
+          <p class="text text--grey">The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen
+            to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve
             your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
           </p>
           <br>
           <p class="text text--grey">
-            Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
+            Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer
             to allow notepads, pens, and USB sticks to be stored under the stand.
           </p>
 
           <div class="box__border">
-            <h3>Bamboo Stand</h3>
+            <h4>Bamboo Stand</h4>
             <p class="text text--cyan">Pledge $25 or more</p>
 
-            <p class="text text--grey">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
+            <p class="text text--grey">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
               you’ll be added to a special Backer member list.
             </p>
 
             <p class="text text--bold">101 <span class="text text--middle">left</span></p>
-            <button class="cta cta--cyan cta--select">Select Reward</button>
+            <button class="cta cta--cyan cta--select" aria-label="select">Select Reward</button>
           </div>
 
           <div class="box__border">
-            <h3>Black Edition Stand</h3>
+            <h4>Black Edition Stand</h4>
             <p class="text text--cyan">Pledge $75 or more</p>
-            
-            <p class="text text--grey">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
+
+            <p class="text text--grey">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
               member list. Shipping is included.
             </p>
 
             <p class="text text--bold">64 <span class="text text--middle">left</span></p>
-            <button class="cta cta--cyan cta--select">Select Reward</button>
+            <button class="cta cta--cyan cta--select" aria-label="select">Select Reward</button>
           </div>
 
           <div class="box__border box__border--disabled">
-            <h3>Mahogany Special Edition</h3>
+            <h4>Mahogany Special Edition</h4>
             <p class="text text--cyan">Pledge $200 or more</p>
 
-            <p class="text text--grey">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
+            <p class="text text--grey">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
               to our Backer member list. Shipping is included.
             </p>
 
             <p class="text text--bold">0 <span class="text text--middle">left</span></p>
-            <button class="cta cta--disabled">Out of Stock</button>
+            <button class="cta cta--disabled" aria-label="out of stock">Out of Stock</button>
           </div>
         </div>
       </div>
@@ -123,12 +123,12 @@
   <div class="box__modal-default" id="boxModal">
       <div class="default__wrapper">
         <h2>Back this project</h2>
-        <button id="modalClose">
+        <button id="modalClose" aria-label="close modal window">
           <svg class="icon__modal-close" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"/></svg>
         </button>
       </div>
       <p class="text text--grey">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-    
+
 
     <div class="box__modal-border">
       <div class="box__modal-top">
@@ -141,7 +141,7 @@
             <h4 class="pledge__title">Pledge with no reward</h4>
           </div>
         </div>
-        <p class="text text--grey">Choose to support us without a reward if you simply believe in our project. As a backer, 
+        <p class="text text--grey">Choose to support us without a reward if you simply believe in our project. As a backer,
           you will be signed up to receive product updates via email.
         </p>
       </div>
@@ -149,7 +149,7 @@
         <p class="text text--grey">Enter your pledge</p>
         <form action="#" class="form__pledge">
           <input required type="number" class="input__pledge" placeholder="$">
-          <button class="cta cta--cyan cta--continue">Continue</button>   
+          <button class="cta cta--cyan cta--continue" aria-label="continue">Continue</button>
         </form>
       </div>
     </div>
@@ -166,7 +166,7 @@
             <p class="text text--cyan">Pledge $25 or more</p>
           </div>
         </div>
-          
+
           <p class="text text--grey">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
             you’ll be added to a special Backer member list.
           </p>
@@ -177,12 +177,12 @@
           <p class="text text--grey">Enter your pledge</p>
           <form action="#" class="form__pledge">
             <input required type="number" class="input__pledge" placeholder="$" min="25">
-            <button class="cta cta--cyan cta--continue" type="submit">Continue</button>   
+            <button class="cta cta--cyan cta--continue" type="submit" aria-label="continue">Continue</button>
           </form>
         </div>
       </div>
     <!-- Selected pledge end -->
-    
+
 
     <div class="box__modal-border">
       <div class="box__modal-top">
@@ -196,7 +196,7 @@
             <p class="text text--cyan">Pledge $75 or more</p>
           </div>
         </div>
-          
+
           <p class="text text--grey">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
             member list. Shipping is included.
           </p>
@@ -208,12 +208,12 @@
         <p class="text text--grey">Enter your pledge</p>
         <form class="form__pledge" action="#">
           <input required type="number" class="input__pledge" placeholder="$" min="75">
-          <button class="cta cta--cyan cta--continue" type="submit">Continue</button>   
-        </form> 
+          <button class="cta cta--cyan cta--continue" type="submit" aria-label="continue">Continue</button>
+        </form>
       </div>
     </div>
     <!-- Selected pledge end -->
-    
+
 
     <div class="box__modal-border box__modal-border--disabled" >
       <div class="box__modal-top">
@@ -226,14 +226,14 @@
             <h4 class="pledge__title--disabled">Mahogany Special Edition</h4>
             <p class="text text--cyan">Pledge $200 or more</p>
           </div>
-        </div>  
+        </div>
         <p class="text text--grey">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
           to our Backer member list. Shipping is included.
         </p>
         <p class="text text--bold text--bold-right">0 <span class="text text--middle">left</span></p>
       </div>
       <!-- Selected pledge  start -->
-    </div> 
+    </div>
   </div>
   <!-- Selected pledge end -->
 
@@ -247,16 +247,16 @@
       an email once our campaign is completed.
     </p>
 
-    <button class="cta cta--cyan cta--done">Got it!</button>
+    <button class="cta cta--cyan cta--done" aria-label="confirm">Got it!</button>
   </div>
 
   <!-- Success modal end -->
 <footer>
   <div class="attribution">
     Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Marta</a>.
-  </div> 
+  </div>
 </footer>
   <script src="js/nav.js"></script>
   <script src="js/modal.js"></script>

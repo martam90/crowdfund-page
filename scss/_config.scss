@@ -5,10 +5,10 @@ $dark-cyan: hsl(176, 72%, 28%);
 $black: hsl(0, 0%, 0%);
 $dark-gray: hsl(0, 0%, 48%);
 
-$light-grey: #FAFAFA; // main bg
+$light-grey: #fafafa; // main bg
 
-$greyish: #D8D8D8; // cara
-$grey: #F4F4F4; // progress bar
+$greyish: #d8d8d8; // cara
+$grey: #f4f4f4; // progress bar
 
 /* font */
 
@@ -20,17 +20,29 @@ $transition: ease-in-out 300ms;
 
 $mobile: 23em;
 $tablet: 48em;
-
+$tablet-bookmark: 51em;
+$desktop: 62.5em;
 
 @mixin tablet {
-    @media screen and(min-width: $tablet) {
-      @content;
-    }
+  @media screen and(min-width: $tablet) {
+    @content;
+  }
 }
 
-
 @mixin mobile {
-    @media screen and(max-width: $mobile) {
-      @content;
-    }
+  @media screen and(max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet-bookmark {
+  @media screen and(max-width: $tablet-bookmark) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and(min-width: $desktop) {
+    @content;
+  }
 }

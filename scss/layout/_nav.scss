@@ -1,114 +1,107 @@
 header {
-    background-image: url("../images/image-hero-mobile.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 70vh;
-    padding-top: 3rem;
+  background-image: url('../images/image-hero-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  padding-top: 3rem;
 
-    @include tablet {
-        background-image: url("../images/image-hero-desktop.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+  @include tablet {
+    background-image: url('../images/image-hero-desktop.jpg');
+  }
 }
 
 .masthead {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.masthead__brand-img {
-    padding-left: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav__list {
-    position: absolute;
-    left: 0;
-    background-color: white;
-    border-radius: 1rem;
-    width: 90%;
-    margin: 3rem 1.5rem 0;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  border-radius: 1rem;
+  width: 90%;
+  margin: 3rem 1.5rem 0;
 
-    &.nav__list--hidden {
-        visibility: hidden;
-        
-        @include tablet {
-            visibility: visible;
-            position: unset;
-            left: unset;
-            background-color: inherit;
-            margin: 0;
-            width: 100%;
+  &.nav__list--hidden {
+    visibility: hidden;
 
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
+    @include tablet {
+      visibility: visible;
+      position: unset;
+      left: unset;
+      background-color: inherit;
+      margin: 0;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
     }
+  }
 }
 
 .nav__list-item {
-    width: 100%;
-    border-bottom: 1px solid rgb(206, 192, 192);
-    
-    @include tablet {
-        border: none;
-        width: unset;
-    }
+  width: 100%;
+  border-bottom: 1px solid rgb(206, 192, 192);
 
-    &:last-child {
-        border-bottom: none;
-    }
+  @include tablet {
+    border: none;
+    width: unset;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .nav__list-link {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    color: $black;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 1rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  color: $black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+  transition: $transition;
+
+  &:hover {
+    color: $dark-cyan;
     transition: $transition;
+  }
+
+  @include tablet {
+    color: white;
+    font-size: 0.8rem;
+    padding: 0;
+    font-weight: 300;
 
     &:hover {
-        color: $dark-cyan;
-        transition: $transition;
+      color: white;
     }
 
-    @include tablet {
-        color: white;
-        font-size: 0.8rem;
-        padding: 0;
-        font-weight: 300;
-
-        &:hover {
-            color: white;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: -0.4rem;
-            left: 30%;
-            width: 1.25rem;
-            height: 0.15rem;
-            transform: scaleX(0);
-            background-color: white;
-            transition: $transition;
-        }
-
-        &:hover::after {
-            transform: scaleX(1);
-        }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.4rem;
+      left: 30%;
+      width: 1.25rem;
+      height: 0.15rem;
+      transform: scaleX(0);
+      background-color: white;
+      transition: $transition;
     }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
 }
 
-
 .btn__menu {
-    @include tablet {
-        display: none;
-    }
+  @include tablet {
+    display: none;
+  }
 }
