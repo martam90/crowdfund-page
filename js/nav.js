@@ -7,11 +7,11 @@
         navList.classList.toggle('nav__list--hidden');
 
         if(navList.classList.contains('nav__list--hidden')) {
-            menuIcon.src = "../images/icon-hamburger.svg";
+            menuIcon.src = "images/icon-hamburger.svg";
             btnMenu.setAttribute('aria-expanded', 'false');
             
         } else {
-            menuIcon.src = "../images/icon-close-menu.svg";
+            menuIcon.src = "images/icon-close-menu.svg";
             btnMenu.setAttribute('aria-expanded', 'true');
         }
     }
