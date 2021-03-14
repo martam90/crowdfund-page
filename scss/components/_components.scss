@@ -52,7 +52,7 @@
   font-size: 1rem;
   font-weight: 700;
   border-radius: 9999px;
-  transition: $transition;
+  transition: background 300ms ease-in-out;
 
   &.cta--cyan {
     background-color: $moderate-cyan;
@@ -64,7 +64,7 @@
 
     &:hover {
       background-color: $dark-cyan;
-      transition: $transition;
+      transition: background 300ms ease-in-out;
     }
   }
 

@@ -3,6 +3,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -25,6 +26,7 @@ body.active::after {
   top: 0;
   left: 0;
   z-index: 5;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.2)));
@@ -92,6 +94,7 @@ button {
   background-color: inherit;
   border: none;
   cursor: pointer;
+  font: inherit;
 }
 
 button:focus {
@@ -100,6 +103,7 @@ button:focus {
 
 input {
   margin: 0;
+  font: inherit;
 }
 
 input:focus {
@@ -160,8 +164,8 @@ input:focus {
   font-size: 1rem;
   font-weight: 700;
   border-radius: 9999px;
-  -webkit-transition: ease-in-out 300ms;
-  transition: ease-in-out 300ms;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
 }
 
 .cta.cta--cyan {
@@ -178,8 +182,8 @@ input:focus {
 
 .cta.cta--cyan:hover {
   background-color: #147b74;
-  -webkit-transition: ease-in-out 300ms;
-  transition: ease-in-out 300ms;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
 }
 
 .cta.cta--disabled {
@@ -305,7 +309,7 @@ progress::-moz-progress-bar {
   fill: white;
 }
 
-@media screen and (max-width: 23em) {
+@media screen and (max-width: 47em) {
   .bookmark__img {
     right: auto;
     margin-top: 1rem;
@@ -318,12 +322,28 @@ header {
   background-size: cover;
   height: 50vh;
   padding-top: 3rem;
+  position: relative;
 }
 
 @media screen and (min-width: 48em) {
   header {
     background-image: url("../images/image-hero-desktop.jpg");
   }
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.2)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+nav {
+  z-index: 999;
 }
 
 .masthead {
@@ -345,7 +365,8 @@ header {
   background-color: white;
   border-radius: 1rem;
   width: 90%;
-  margin: 3rem 1.5rem 0;
+  margin: 2rem 1.5rem 0;
+  z-index: 999;
 }
 
 .nav__list.nav__list--hidden {
@@ -394,14 +415,14 @@ header {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 1rem;
-  -webkit-transition: ease-in-out 300ms;
-  transition: ease-in-out 300ms;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
 }
 
 .nav__list-link:hover {
   color: #147b74;
-  -webkit-transition: ease-in-out 300ms;
-  transition: ease-in-out 300ms;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
 }
 
 @media screen and (min-width: 48em) {
@@ -537,19 +558,28 @@ main {
   }
 }
 
-.text.text--bold {
+.text.text--middle {
+  color: #7a7a7a;
+  font-weight: 400;
+  font-size: 0.9rem;
+  vertical-align: 0.2rem;
+}
+
+.items {
+  margin: 0;
+  line-height: 1.5;
   font-weight: 700;
   padding: 1rem 0;
   font-size: 2rem;
 }
 
 @media screen and (min-width: 48em) {
-  .text.text--bold {
+  .items {
     padding: 0;
   }
 }
 
-.text.text--bold-right {
+.items.items--right {
   -ms-grid-column-align: end;
       justify-self: end;
   -ms-grid-column: 2;
@@ -558,13 +588,6 @@ main {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-}
-
-.text.text--middle {
-  color: #7a7a7a;
-  font-weight: 400;
-  font-size: 0.9rem;
-  vertical-align: 0.2rem;
 }
 
 .box__item {
@@ -659,50 +682,38 @@ main {
 }
 
 .box__modal-default {
-  display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 99;
-  min-width: 20rem;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  max-width: 50rem;
+  margin: 0 auto;
   padding: 2rem;
   border-radius: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-  -webkit-animation: boxmodaldefault 250ms;
-          animation: boxmodaldefault 250ms;
-}
-
-@-webkit-keyframes boxmodaldefault {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes boxmodaldefault {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .box__modal-default.active {
-  display: block;
   background-color: #fff;
+  visibility: visible;
+  opacity: 1;
 }
 
-@media screen and (max-width: 23em) {
+@media screen and (max-width: 47em) {
   .box__modal-default {
     min-width: 18rem;
     padding: 1rem;
   }
+}
+
+.modal__content {
+  position: relative;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .box__modal-border {
@@ -825,13 +836,25 @@ main {
           justify-content: center;
   gap: 1rem;
   padding-top: 1rem;
+  position: relative;
 }
 
-@media screen and (max-width: 23em) {
+@media screen and (max-width: 47em) {
   .form__pledge {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+}
+
+.input__symbol::before {
+  content: '$';
+  position: absolute;
+  top: 1.8rem;
+  left: 2rem;
+  color: #7a7a7a;
+  font-size: 1rem;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
 }
 
 .input__pledge {
@@ -841,6 +864,7 @@ main {
   border: 1px solid #d8d8d8;
   height: 2.9rem;
   width: 8.61rem;
+  color: black;
   font-weight: 700;
   text-align: center;
   -webkit-transition: ease-in-out 300ms;
@@ -874,14 +898,14 @@ main {
 }
 
 .box__modal-success {
-  display: none;
+  visibility: hidden;
   text-align: center;
   width: 18rem;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 99;
   padding: 1rem;
   border-radius: 1rem;
@@ -896,7 +920,7 @@ main {
 }
 
 .box__modal-success.active {
-  display: block;
+  visibility: visible;
   background-color: #fff;
 }
 /*# sourceMappingURL=index.css.map */

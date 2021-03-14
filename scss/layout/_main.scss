@@ -83,22 +83,6 @@ main {
     }
   }
 
-  &.text--bold {
-    font-weight: 700;
-    padding: 1rem 0;
-    font-size: 2rem;
-
-    @include tablet {
-      padding: 0;
-    }
-  }
-
-  &.text--bold-right {
-    justify-self: end;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-
   &.text--middle {
     color: $dark-gray;
     font-weight: 400;
@@ -106,6 +90,25 @@ main {
     vertical-align: 0.2rem;
   }
 }
+
+.items {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 700;
+  padding: 1rem 0;
+  font-size: 2rem;
+
+  @include tablet {
+    padding: 0;
+  }
+
+  &.items--right {
+    justify-self: end;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}
+
 
 .box__item {
   display: flex;
@@ -153,6 +156,7 @@ main {
   color: black;
   font-weight: 700;
 }
+// js classes end
 
 .box__border {
   border: 1px solid $greyish;

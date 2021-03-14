@@ -39,7 +39,7 @@
 
     for (let i = 0; i < forms.length; i++) {
         let form = forms[i];
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', (event) => {
             /*if (i > 0) {
                 itemsAvailable[i - 1]--;
                 let itemIncrement = itemIncrements[i - 1];
@@ -47,6 +47,7 @@
             }*/
             boxModal.classList.remove('active');
             boxSuccess.classList.add('active');
+            event.preventDefault();
         });
     }
 

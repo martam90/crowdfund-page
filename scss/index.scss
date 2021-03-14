@@ -1,6 +1,7 @@
-@import 'config';
-@import 'global';
-@import 'components';
+@import 'abstracts/var';
+@import 'abstracts/mixins';
+@import 'base/global';
+@import 'components/components';
 @import 'layout/nav';
 @import 'layout/main';
 @import 'layout/modal';
