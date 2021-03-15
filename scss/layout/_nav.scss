@@ -36,6 +36,10 @@ nav {
   width: 100%;
 }
 
+.masthead__logo {
+  z-index: 999;
+}
+
 .nav__list {
   position: absolute;
   left: 0;

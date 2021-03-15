@@ -9,9 +9,8 @@
   opacity: 0;
   max-width: 50rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-radius: 1rem;
-
 
   &.active {
     background-color: #fff;
@@ -20,7 +19,7 @@
   }
 
   @include mobile {
-    min-width: 18rem;
+    min-width: 20rem;
     padding: 1rem;
   }
 }
@@ -117,22 +116,9 @@
   justify-content: center;
   gap: 1rem;
   padding-top: 1rem;
-  position: relative;
 
   @include mobile {
     flex-wrap: wrap;
-  }
-}
-
-.input__symbol {
-  &::before {
-    content: '$';
-    position: absolute;
-    top: 1.8rem;
-    left: 2rem;
-    color: $dark-gray;
-    font-size: 1rem;
-    transform: translateX(1rem);
   }
 }
 
@@ -189,7 +175,7 @@
   @include tablet {
     margin-right: auto;
     margin-left: auto;
-    width: 45rem;
+    width: 35rem;
   }
 
   &.active {

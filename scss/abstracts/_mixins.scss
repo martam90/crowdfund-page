@@ -1,6 +1,6 @@
 $mobile: 47em;
-$tablet: 48em;
-$tablet-bookmark: 51em;
+$tablet: 48em; //768px
+$tablet-bookmark: 51em; //816px
 $desktop: 62.5em;
 
 @mixin tablet {

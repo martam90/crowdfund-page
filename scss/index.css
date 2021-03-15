@@ -260,6 +260,9 @@ progress::-moz-progress-bar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-top: 2rem;
@@ -312,7 +315,6 @@ progress::-moz-progress-bar {
 @media screen and (max-width: 47em) {
   .bookmark__img {
     right: auto;
-    margin-top: 1rem;
   }
 }
 
@@ -357,6 +359,10 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+}
+
+.masthead__logo {
+  z-index: 999;
 }
 
 .nav__list {
@@ -693,7 +699,7 @@ main {
   opacity: 0;
   max-width: 50rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-radius: 1rem;
 }
 
@@ -705,7 +711,7 @@ main {
 
 @media screen and (max-width: 47em) {
   .box__modal-default {
-    min-width: 18rem;
+    min-width: 20rem;
     padding: 1rem;
   }
 }
@@ -836,7 +842,6 @@ main {
           justify-content: center;
   gap: 1rem;
   padding-top: 1rem;
-  position: relative;
 }
 
 @media screen and (max-width: 47em) {
@@ -844,17 +849,6 @@ main {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-}
-
-.input__symbol::before {
-  content: '$';
-  position: absolute;
-  top: 1.8rem;
-  left: 2rem;
-  color: #7a7a7a;
-  font-size: 1rem;
-  -webkit-transform: translateX(1rem);
-          transform: translateX(1rem);
 }
 
 .input__pledge {
@@ -915,7 +909,7 @@ main {
   .box__modal-success {
     margin-right: auto;
     margin-left: auto;
-    width: 45rem;
+    width: 35rem;
   }
 }
 
