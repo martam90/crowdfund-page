@@ -1,7 +1,7 @@
 (function () {
     let deadline = document.getElementById('deadline');
     let days = document.getElementById('days');
-    let futureDate = new Date(2021, 4, 3, 24, 0);
+    let futureDate = new Date(2021, 11, 3, 24, 0);
 
     function remainingDays() {
 
